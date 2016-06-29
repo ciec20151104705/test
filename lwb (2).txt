@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+	char str[100];
+	FILE *fp; 
+	fp=fopen("export.txt","r");
+	if(fp==NULL)
+	{
+		printf("no find\n");
+		return(-1);
+	}
+	else
+	{
+		while(fgets(str,100,fp))
+		{
+			printf("%s\n",str);
+		}
+		fclose(fp);
+		
+	}
+	return 0;
+	
+}
