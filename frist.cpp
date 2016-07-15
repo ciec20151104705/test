@@ -16,13 +16,12 @@ int main()
 	fp=fopen("export.txt","r");
 	fp1=fopen("export1.csv","w");
 	if(fp==	NULL)
-		{
+	{
 		printf("Can not file\n");
 		return -1;
-		}
+	}
 	else
 	{
-	
 		int i=0; 
 		fseek(fp,0,2);
 		len=ftell(fp);
@@ -31,7 +30,6 @@ int main()
 		fread(str,1,len,fp);
 	}
 	fprintf(fp1,"\t纬度     \t经度     \t日期     \t时间\n");
-
 	while( !((*(str+i)=='<')&&(*(str+i+1)=='/')&&(*(str+i+2)=='g')&&(*(str+i+3)=='p')&&(*(str+i+4)=='x')&&(*(str+i+5)=='>')))
 	{	
 		if((*(str+i)==' ')&&(*(str+i+1)=='l')&&(*(str+i+2)=='a')&&(*(str+i+3)=='t'))
@@ -53,8 +51,8 @@ int main()
 		}
 		i++;
 	}
-fclose(fp);
-fclose(fp1);
-free(str);
-return 0;
+    fclose(fp);
+    fclose(fp1);
+    free(str);
+    return 0;
 }
